@@ -45,8 +45,8 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: "node_modules/@mediapipe/hands",
-          to: "hands",
+          from: "node_modules/@mediapipe/holistic",
+          to: "holistic",
         },
       ],
     }),

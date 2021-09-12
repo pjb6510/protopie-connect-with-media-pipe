@@ -1,4 +1,4 @@
-import { Results } from "@mediapipe/hands";
+import { Results } from "@mediapipe/holistic";
 import { ResultsHandler } from "../model/ResultsHandler";
 
 const createResultsListener =

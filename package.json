@@ -26,7 +26,7 @@
   "dependencies": {
     "@mediapipe/camera_utils": "^0.3.1631210127",
     "@mediapipe/drawing_utils": "^0.3.1620248257",
-    "@mediapipe/hands": "^0.3.1630010197",
+    "@mediapipe/holistic": "^0.4.1628005088",
     "socket.io-client": "^4.2.0"
   }
 }
