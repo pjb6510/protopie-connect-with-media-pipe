@@ -5,8 +5,8 @@ import drawHands from "./resultsHandlers/drawHands";
 import sendFingerTipPosition from "./resultsHandlers/sendFingerTipPosition";
 
 const init = () => {
-  const $video = document.querySelector(".input_video") as HTMLVideoElement;
-  const $canvas = document.querySelector(".output_canvas") as HTMLCanvasElement;
+  const $video = document.querySelector(".input-video") as HTMLVideoElement;
+  const $canvas = document.querySelector(".output-canvas") as HTMLCanvasElement;
 
   const resultsListener = createResultsListener($canvas, [
     drawHands,
