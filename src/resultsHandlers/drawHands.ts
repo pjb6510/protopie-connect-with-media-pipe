@@ -1,6 +1,6 @@
 import { HAND_CONNECTIONS } from "@mediapipe/holistic";
 import { drawConnectors, drawLandmarks } from "@mediapipe/drawing_utils";
-import { ResultsHandler } from "../model/ResultsHandler";
+import { ResultsHandler } from "../models/ResultsHandler";
 
 const drawHands: ResultsHandler = ({ results, $canvas }) => {
   const ctx = $canvas.getContext("2d");

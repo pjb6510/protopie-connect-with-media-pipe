@@ -1,5 +1,5 @@
 import sendMessage from "../libs/sendMessage";
-import { ResultsHandler } from "../model/ResultsHandler";
+import { ResultsHandler } from "../models/ResultsHandler";
 
 const sendFingerTipPosition: ResultsHandler = ({ results, $canvas }) => {
   if (!results.rightHandLandmarks) {
