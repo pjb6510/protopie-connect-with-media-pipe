@@ -3,6 +3,7 @@ import createHolistic from "./libs/createHolistic";
 import createCamera from "./libs/createCamera";
 import drawHands from "./resultsHandlers/drawHands";
 import sendFingerTipPosition from "./resultsHandlers/sendFingerTipPosition";
+import sendHandGesture from "./resultsHandlers/sendHandGesture";
 
 const init = () => {
   const $video = document.querySelector(".input-video") as HTMLVideoElement;
@@ -11,6 +12,7 @@ const init = () => {
   const resultsListener = createResultsListener($canvas, [
     drawHands,
     sendFingerTipPosition,
+    sendHandGesture,
   ]);
 
   const holistic = createHolistic(resultsListener);

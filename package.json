@@ -27,6 +27,7 @@
     "@mediapipe/camera_utils": "^0.3.1631210127",
     "@mediapipe/drawing_utils": "^0.3.1620248257",
     "@mediapipe/holistic": "^0.4.1628005088",
+    "fingerpose": "0.0.2",
     "socket.io-client": "^4.2.0"
   }
 }
