@@ -1,4 +1,4 @@
-import socket from "../libs/socket";
+import sendMessage from "../libs/sendMessage";
 import { ResultsHandler } from "../model/ResultsHandler";
 
 const sendFingerTipPosition: ResultsHandler = ({ results, $canvas }) => {
@@ -12,8 +12,8 @@ const sendFingerTipPosition: ResultsHandler = ({ results, $canvas }) => {
   const x = $canvas.width - $canvas.width * xRatio;
   const y = $canvas.height * yRatio;
 
-  socket.sendMessage<number>("x", x);
-  socket.sendMessage<number>("y", y);
+  sendMessage<number>("x", x);
+  sendMessage<number>("y", y);
 };
 
 export default sendFingerTipPosition;

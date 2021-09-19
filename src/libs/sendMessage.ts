@@ -40,11 +40,4 @@ const sendMessage = <T>(message: string, value: T) => {
   });
 };
 
-const listenPPMessage = (callback: (data) => void) => {
-  socket.on("ppMessage", callback);
-};
-
-export default {
-  sendMessage,
-  listenPPMessage,
-};
+export default sendMessage;
