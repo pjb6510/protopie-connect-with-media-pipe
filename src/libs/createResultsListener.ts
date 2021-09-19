@@ -4,8 +4,10 @@ import { ResultsHandler } from "../model/ResultsHandler";
 const createResultsListener =
   ($canvas: HTMLCanvasElement, funcs: ResultsHandler[]) =>
   (results: Results) => {
+    let acc: unknown = null;
+
     for (const func of funcs) {
-      func({ results, $canvas });
+      acc = func({ results, $canvas, acc });
     }
   };
 
