@@ -1,7 +1,6 @@
-import sendMessage from '../libs/sendMessage';
 import { ResultsHandler } from '../models/ResultsHandler';
 
-const sendFingerTipPosition: ResultsHandler = ({ results, $canvas }) => {
+const getFingerTipPosition: ResultsHandler = ({ results, $canvas, acc }) => {
   if (!results.rightHandLandmarks) {
     return;
   }
@@ -12,8 +11,19 @@ const sendFingerTipPosition: ResultsHandler = ({ results, $canvas }) => {
   const x = $canvas.width - $canvas.width * xRatio;
   const y = $canvas.height * yRatio;
 
-  sendMessage<number>('x', x);
-  sendMessage<number>('y', y);
+  const result = [
+    ['x', x],
+    ['y', y],
+  ];
+
+  if (acc && typeof acc === 'object') {
+    return {
+      ...acc,
+      messages: result,
+    };
+  }
+
+  return { messages: result };
 };
 
-export default sendFingerTipPosition;
+export default getFingerTipPosition;
