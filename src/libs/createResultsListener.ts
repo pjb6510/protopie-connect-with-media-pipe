@@ -2,7 +2,7 @@ import { Results } from '@mediapipe/holistic';
 import { ResultsHandler } from '../models/ResultsHandler';
 
 const createResultsListener =
-  ($canvas: HTMLCanvasElement, funcs: ResultsHandler[]) =>
+  ($canvas: HTMLCanvasElement, ...funcs: ResultsHandler[]) =>
   (results: Results) => {
     let acc: unknown = null;
 

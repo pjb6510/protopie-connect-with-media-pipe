@@ -9,11 +9,12 @@ const init = () => {
   const $video = document.querySelector('.input-video') as HTMLVideoElement;
   const $canvas = document.querySelector('.output-canvas') as HTMLCanvasElement;
 
-  const resultsListener = createResultsListener($canvas, [
+  const resultsListener = createResultsListener(
+    $canvas,
     drawHands,
     sendFingerTipPosition,
-    sendHandGesture,
-  ]);
+    sendHandGesture
+  );
 
   const holistic = createHolistic(resultsListener);
   const camera = createCamera($video, holistic);
