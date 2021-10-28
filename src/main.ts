@@ -4,6 +4,7 @@ import createCamera from './libs/createCamera';
 import drawHands from './resultsHandlers/drawHands';
 import sendMessages from './resultsHandlers/sendMessages';
 import recognizePointUpGesture from './resultsHandlers/recognizePointUpGesture';
+import getFingerTipXYRatio from './resultsHandlers/getFingerTipXYRatio';
 import getFingerTipPosition from './resultsHandlers/getFingerTipPosition';
 
 const init = () => {
@@ -13,6 +14,7 @@ const init = () => {
   const resultsListener = createResultsListener(
     $canvas,
     drawHands,
+    getFingerTipXYRatio,
     getFingerTipPosition,
     recognizePointUpGesture,
     sendMessages,
