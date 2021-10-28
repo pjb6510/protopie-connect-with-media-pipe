@@ -3,7 +3,7 @@ import createHolistic from './libs/createHolistic';
 import createCamera from './libs/createCamera';
 import drawHands from './resultsHandlers/drawHands';
 import sendMessages from './resultsHandlers/sendMessages';
-import sendHandGesture from './resultsHandlers/sendHandGesture';
+import recognizePointUpGesture from './resultsHandlers/recognizePointUpGesture';
 import getFingerTipPosition from './resultsHandlers/getFingerTipPosition';
 
 const init = () => {
@@ -14,7 +14,7 @@ const init = () => {
     $canvas,
     drawHands,
     getFingerTipPosition,
-    sendHandGesture,
+    recognizePointUpGesture,
     sendMessages,
   );
 
