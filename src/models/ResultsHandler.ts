@@ -4,4 +4,4 @@ export type ResultsHandler = (ingredient: {
   results: Results;
   $canvas: HTMLCanvasElement;
   acc: unknown;
-}) => unknown;
+}) => unknown | void;
