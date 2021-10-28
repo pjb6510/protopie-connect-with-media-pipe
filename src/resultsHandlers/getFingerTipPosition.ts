@@ -1,21 +1,20 @@
 import { ResultsHandler } from '../models/ResultsHandler';
 
 const getFingerTipPosition: ResultsHandler = ({ $canvas, acc }) => {
-  if (!acc || !acc['messages']) {
+  if (!acc?.['messages']?.x || !acc?.['messages']?.y) {
     return;
   }
 
-  const result = [];
+  const messages = acc['messages'] as { [messageId: string]: any };
 
-  for (const [axis, xyRatio] of acc['messages']) {
-    if (axis === 'x') {
-      result.push(['x', $canvas.width * xyRatio]);
-    } else {
-      result.push(['y', $canvas.height * xyRatio]);
-    }
-  }
-
-  return { messages: result };
+  return {
+    ...(acc as Object),
+    messages: {
+      ...messages,
+      x: $canvas.width * messages.x,
+      y: $canvas.height * messages.y,
+    },
+  };
 };
 
 export default getFingerTipPosition;

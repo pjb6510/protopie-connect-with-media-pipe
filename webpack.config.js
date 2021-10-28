@@ -2,7 +2,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const chalk = require('chalk');
 
 module.exports = (env) => {
   console.log(`\n>> Run ${env.mode} Mode\n`);
@@ -11,6 +10,8 @@ module.exports = (env) => {
     switch (env.mode) {
       case 'finger-pointing':
         return 'FingerPointingMode.ts';
+      case 'brightness-control':
+        return 'BrightnessControlMode.ts';
       default:
         console.error(`\n>> Mode Error: ${env.mode}\nRun finger-pointing\n`);
         return 'FingerPointingMode.ts';

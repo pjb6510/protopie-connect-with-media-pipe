@@ -4,7 +4,7 @@ import { GestureEstimator } from 'fingerpose';
 import { IGestureEstimator } from '../models/Fingerpose';
 import formatLandmarksToArr from '../libs/arrayifyLandmarkList';
 
-const recognizePointUpGesture: ResultsHandler = ({ results, acc }) => {
+const filterMessagesWithRecognition: ResultsHandler = ({ results, acc }) => {
   if (!results.rightHandLandmarks) {
     return;
   }
@@ -22,4 +22,4 @@ const recognizePointUpGesture: ResultsHandler = ({ results, acc }) => {
   }
 };
 
-export default recognizePointUpGesture;
+export default filterMessagesWithRecognition;
