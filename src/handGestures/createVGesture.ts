@@ -7,8 +7,8 @@ import {
 import { IGestureDescription } from '../models/Fingerpose';
 import { GestureNames } from './GestureNames';
 
-const createPointUpGesture = () => {
-  const pointUp = new GestureDescription(GestureNames.pointUpGesture) as IGestureDescription;
+const createVGesture = () => {
+  const pointUp = new GestureDescription(GestureNames.vGesture) as IGestureDescription;
 
   // Thumb
   pointUp.addCurl(Finger.Thumb, FingerCurl.HalfCurl, 0.5);
@@ -21,10 +21,8 @@ const createPointUpGesture = () => {
   pointUp.addDirection(Finger.Index, FingerDirection.VerticalUp, 1.0);
 
   // Middle
-  pointUp.addCurl(Finger.Middle, FingerCurl.FullCurl, 1.0);
-  pointUp.addDirection(Finger.Middle, FingerDirection.VerticalUp, 0.2);
-  pointUp.addDirection(Finger.Middle, FingerDirection.DiagonalUpLeft, 1.0);
-  pointUp.addDirection(Finger.Middle, FingerDirection.HorizontalLeft, 0.2);
+  pointUp.addCurl(Finger.Middle, FingerCurl.NoCurl, 1.0);
+  pointUp.addDirection(Finger.Middle, FingerDirection.VerticalUp, 1.0);
 
   // Ring
   pointUp.addCurl(Finger.Ring, FingerCurl.FullCurl, 1.0);
@@ -41,4 +39,4 @@ const createPointUpGesture = () => {
   return pointUp;
 };
 
-export default createPointUpGesture;
+export default createVGesture;

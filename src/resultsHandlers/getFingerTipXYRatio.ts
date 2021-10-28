@@ -8,14 +8,12 @@ const getFingerTipXYRatio: ResultsHandler = ({ results, acc }) => {
   const indexFingerTip = results.rightHandLandmarks[8];
   const { x, y } = indexFingerTip;
 
-  const result = {
-    x: 1 - x,
-    y: y,
-  };
-
   return {
     ...(acc as Object),
-    messages: result,
+    xyRatio: {
+      x: 1 - x,
+      y: y,
+    },
   };
 };
 

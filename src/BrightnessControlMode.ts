@@ -6,7 +6,7 @@ import sendMessages from './resultsHandlers/sendMessages';
 import getFingerTipXYRatio from './resultsHandlers/getFingerTipXYRatio';
 import replaceXYRatioWithBrightness from './resultsHandlers/replaceXYRatioWithBrightness';
 import init from './init';
-import filterMessagesWithRecognition from './resultsHandlers/filterMessagesWithRecognition';
+import sendBrightnessByGesture from './resultsHandlers/sendBrightnessByGesture';
 
 const $canvas = document.querySelector('.output-canvas') as HTMLCanvasElement;
 const resultsListener = createResultsListener(
@@ -14,7 +14,7 @@ const resultsListener = createResultsListener(
   drawHands,
   getFingerTipXYRatio,
   replaceXYRatioWithBrightness,
-  filterMessagesWithRecognition,
+  sendBrightnessByGesture,
   sendMessages
 );
 
