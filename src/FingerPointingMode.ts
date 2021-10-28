@@ -1,9 +1,10 @@
+import './style.css';
+
 import createResultsListener from './libs/createResultsListener';
 import createHolistic from './libs/createHolistic';
 import createCamera from './libs/createCamera';
 import drawHands from './resultsHandlers/drawHands';
 import sendMessages from './resultsHandlers/sendMessages';
-import recognizePointUpGesture from './resultsHandlers/recognizePointUpGesture';
 import getFingerTipXYRatio from './resultsHandlers/getFingerTipXYRatio';
 import getFingerTipPosition from './resultsHandlers/getFingerTipPosition';
 
@@ -16,8 +17,7 @@ const init = () => {
     drawHands,
     getFingerTipXYRatio,
     getFingerTipPosition,
-    recognizePointUpGesture,
-    sendMessages,
+    sendMessages
   );
 
   const holistic = createHolistic(resultsListener);
@@ -26,4 +26,4 @@ const init = () => {
   camera.start();
 };
 
-export default init;
+init();
