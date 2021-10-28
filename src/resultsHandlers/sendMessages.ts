@@ -42,7 +42,10 @@ const sendMessages: ResultsHandler = ({ acc }) => {
 
   return {
     ...(acc as Object),
-    prev: isNew ? { messages } : { messages: prevMessages },
+    prev: {
+      ...acc['prev'],
+      messages: isNew ? messages : prevMessages,
+    },
   };
 };
 
