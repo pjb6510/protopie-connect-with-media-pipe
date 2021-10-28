@@ -1,4 +1,4 @@
-import { Results } from "@mediapipe/holistic";
+import { Results } from '@mediapipe/holistic';
 
 export type ResultsHandler = (ingredient: {
   results: Results;

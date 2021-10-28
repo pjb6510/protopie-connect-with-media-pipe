@@ -1,8 +1,8 @@
 // https://github.com/andypotato/fingerpose/blob/master/src/FingerDescription.js
 
-import { Finger, FingerCurl, FingerDirection } from "fingerpose";
+import { Finger, FingerCurl, FingerDirection } from 'fingerpose';
 
-type FingerValues = keyof IFinger["nameMapping"];
+type FingerValues = keyof IFinger['nameMapping'];
 interface IFinger {
   Thumb: 0;
   Index: 1;
@@ -13,11 +13,11 @@ interface IFinger {
   all: [0, 1, 2, 3, 4];
 
   nameMapping: {
-    0: "Thumb";
-    1: "Index";
-    2: "Middle";
-    3: "Ring";
-    4: "Pinky";
+    0: 'Thumb';
+    1: 'Index';
+    2: 'Middle';
+    3: 'Ring';
+    4: 'Pinky';
   };
 
   pointsMapping: {
@@ -32,22 +32,22 @@ interface IFinger {
   getPoints: (value: FingerValues) => number[][] | false;
 }
 
-type FingerCurlValues = keyof IFingerCurl["nameMapping"];
+type FingerCurlValues = keyof IFingerCurl['nameMapping'];
 interface IFingerCurl {
   NoCurl: 0;
   HalfCurl: 1;
   FullCurl: 2;
 
   nameMapping: {
-    0: "No Curl";
-    1: "Half Curl";
-    2: "Full Curl";
+    0: 'No Curl';
+    1: 'Half Curl';
+    2: 'Full Curl';
   };
 
   getName: (value: FingerCurlValues) => string | false;
 }
 
-type FingerDirectionValues = keyof IFingerDirection["nameMapping"];
+type FingerDirectionValues = keyof IFingerDirection['nameMapping'];
 interface IFingerDirection {
   VerticalUp: 0;
   VerticalDown: 1;
@@ -59,14 +59,14 @@ interface IFingerDirection {
   DiagonalDownLeft: 7;
 
   nameMapping: {
-    0: "Vertical Up";
-    1: "Vertical Down";
-    2: "Horizontal Left";
-    3: "Horizontal Right";
-    4: "Diagonal Up Right";
-    5: "Diagonal Up Left";
-    6: "Diagonal Down Right";
-    7: "Diagonal Down Left";
+    0: 'Vertical Up';
+    1: 'Vertical Down';
+    2: 'Horizontal Left';
+    3: 'Horizontal Right';
+    4: 'Diagonal Up Right';
+    5: 'Diagonal Up Left';
+    6: 'Diagonal Down Right';
+    7: 'Diagonal Down Left';
   };
 
   getName: (value: FingerDirectionValues) => string | false;

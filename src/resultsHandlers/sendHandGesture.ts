@@ -1,8 +1,8 @@
-import { ResultsHandler } from "../models/ResultsHandler";
-import createPointUpGesture from "../handGestures/createPointUpGesture";
-import { GestureEstimator } from "fingerpose";
-import { IGestureEstimator } from "../models/Fingerpose";
-import formatLandmarksToArr from "../libs/arrayifyLandmarkList";
+import { ResultsHandler } from '../models/ResultsHandler';
+import createPointUpGesture from '../handGestures/createPointUpGesture';
+import { GestureEstimator } from 'fingerpose';
+import { IGestureEstimator } from '../models/Fingerpose';
+import formatLandmarksToArr from '../libs/arrayifyLandmarkList';
 
 const sendHandGesture: ResultsHandler = ({ results }) => {
   if (!results.rightHandLandmarks) {
@@ -18,7 +18,7 @@ const sendHandGesture: ResultsHandler = ({ results }) => {
   const recognition = gestureEstimator.estimate(landmarks, 7);
 
   if (recognition.gestures != undefined && recognition.gestures.length > 0) {
-    console.log("hi");
+    console.log('hi');
   }
 };
 

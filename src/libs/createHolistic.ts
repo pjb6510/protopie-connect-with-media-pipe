@@ -1,4 +1,4 @@
-import { Holistic, ResultsListener } from "@mediapipe/holistic";
+import { Holistic, ResultsListener } from '@mediapipe/holistic';
 
 const createHolistic = (ResultsListener: ResultsListener) => {
   const holistic = new Holistic({

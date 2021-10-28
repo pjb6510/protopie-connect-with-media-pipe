@@ -1,8 +1,8 @@
-import { NormalizedLandmarkList } from "@mediapipe/holistic";
-import { ArrayifiedLandmarkList } from "../models/ArrayifiedLandmarkList";
+import { NormalizedLandmarkList } from '@mediapipe/holistic';
+import { ArrayifiedLandmarkList } from '../models/ArrayifiedLandmarkList';
 
 const arrayifyLandmarkList = (
-  landmarks: NormalizedLandmarkList,
+  landmarks: NormalizedLandmarkList
 ): ArrayifiedLandmarkList =>
   landmarks.map((landmark) =>
     Object.values(landmark).filter(

@@ -1,12 +1,12 @@
 // https://github.com/andypotato/fingerpose/blob/master/src/GestureDescription.js
 // https://github.com/andypotato/fingerpose/blob/master/src/GestureEstimator.js
 
-import { ArrayifiedLandmarkList } from "./ArrayifiedLandmarkList";
+import { ArrayifiedLandmarkList } from './ArrayifiedLandmarkList';
 import {
   FingerValues,
   FingerCurlValues,
   FingerDirectionValues,
-} from "./FingerposeConstants";
+} from './FingerposeConstants';
 
 interface IGestureDescription {
   name: string;
@@ -30,8 +30,8 @@ interface IGestureDescription {
   setWeight: (finger: FingerValues, weight: number) => void;
 
   matchAgainst: (
-    detectedCurls: IGestureDescription["curls"],
-    detectedDirections: IGestureDescription["directions"]
+    detectedCurls: IGestureDescription['curls'],
+    detectedDirections: IGestureDescription['directions']
   ) => number;
 }
 

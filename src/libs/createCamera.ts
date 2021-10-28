@@ -1,5 +1,5 @@
-import { Camera } from "@mediapipe/camera_utils";
-import { Holistic } from "@mediapipe/holistic";
+import { Camera } from '@mediapipe/camera_utils';
+import { Holistic } from '@mediapipe/holistic';
 
 export default function createCamera(
   $video: HTMLVideoElement,

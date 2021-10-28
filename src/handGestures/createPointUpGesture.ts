@@ -1,15 +1,13 @@
-import { GestureDescription } from "fingerpose";
+import { GestureDescription } from 'fingerpose';
 import {
   Finger,
   FingerCurl,
   FingerDirection,
-} from "../models/FingerposeConstants";
-import { IGestureDescription } from "../models/Fingerpose";
+} from '../models/FingerposeConstants';
+import { IGestureDescription } from '../models/Fingerpose';
 
 const createPointUpGesture = () => {
-  const pointUp = new GestureDescription(
-    "point-up"
-  ) as IGestureDescription;
+  const pointUp = new GestureDescription('point-up') as IGestureDescription;
 
   // Thumb
   pointUp.addCurl(Finger.Thumb, FingerCurl.HalfCurl, 0.5);

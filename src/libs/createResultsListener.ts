@@ -1,5 +1,5 @@
-import { Results } from "@mediapipe/holistic";
-import { ResultsHandler } from "../models/ResultsHandler";
+import { Results } from '@mediapipe/holistic';
+import { ResultsHandler } from '../models/ResultsHandler';
 
 const createResultsListener =
   ($canvas: HTMLCanvasElement, funcs: ResultsHandler[]) =>
