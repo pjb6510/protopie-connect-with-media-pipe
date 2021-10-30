@@ -9,7 +9,7 @@ const getFingerTipXYRatio: ResultsHandler = ({ results, acc }) => {
   const { x, y } = indexFingerTip;
 
   return {
-    ...(acc as Object),
+    ...acc,
     xyRatio: {
       x: 1 - x,
       y: y,

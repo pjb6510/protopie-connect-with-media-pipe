@@ -1,7 +1,8 @@
 import { Results } from '@mediapipe/holistic';
+import { Accumulator } from './Accumulator';
 
 export type ResultsHandler = (ingredient: {
   results: Results;
   $canvas: HTMLCanvasElement;
-  acc: unknown;
-}) => unknown | void;
+  acc: Accumulator;
+}) => Accumulator | void;

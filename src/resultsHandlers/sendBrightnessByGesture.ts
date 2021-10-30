@@ -6,8 +6,7 @@ import formatLandmarksToArr from '../libs/arrayifyLandmarkList';
 import createVGesture from '../handGestures/createVGesture';
 import createWGesture from '../handGestures/createWGesture';
 import { GestureNames } from '../handGestures/GestureNames';
-
-type GestureQueue = string[];
+import { GestureQueue } from '../models/Accumulator';
 
 const enqueueGesture = (
   prevQueue: GestureQueue | undefined,
@@ -53,28 +52,26 @@ const sendBrightnessByGesture: ResultsHandler = ({ results, acc }) => {
   const landmarks = formatLandmarksToArr(results.rightHandLandmarks);
 
   const recognition = gestureEstimator.estimate(landmarks, 7);
-  const brightness = acc['brightness'];
-  const gestureQueue = acc?.['prev']?.['gestureQueue'];
+  const brightness = acc.brightness
+  const gestureQueue = acc?.prev?.gestureQueue;
 
   if (recognition?.gestures?.[0]) {
     const gestureName = recognition.gestures[0].name;
-    const result = {
-      ...(acc as Object),
-    };
+    const result = { ...acc };
 
     const newGestureQueue = enqueueGesture(gestureQueue, gestureName);
-    result['prev'] = { ...result['prev'], gestureQueue: newGestureQueue };
+    result.prev = { ...result.prev, gestureQueue: newGestureQueue };
 
     if (isReadyToSend(newGestureQueue, gestureName)) {
       switch (gestureName) {
         case GestureNames.pointUpGesture:
-          result['messages'] = { first: brightness };
+          result.messages = { first: brightness };
           break;
         case GestureNames.vGesture:
-          result['messages'] = { second: brightness };
+          result.messages = { second: brightness };
           break;
         case GestureNames.wGesture:
-          result['messages'] = { third: brightness };
+          result.messages = { third: brightness };
           break;
         default:
           break;

@@ -1,19 +1,16 @@
 import { ResultsHandler } from '../models/ResultsHandler';
 
-const sendFingerTipPosition: ResultsHandler = ({ $canvas, acc }) => {
-  if (!acc?.['fingerTipPosition']?.x || !acc?.['fingerTipPosition']?.y) {
+const sendFingerTipPosition: ResultsHandler = ({ acc }) => {
+  if (!acc?.fingerTipPosition?.x || !acc?.fingerTipPosition?.y) {
     return;
   }
 
-  const fingerTipPosition = acc['fingerTipPosition'] as {
-    [axis: string]: number;
-  };
-
   return {
-    ...(acc as Object),
+    ...acc,
     messages: {
-      x: fingerTipPosition.x,
-      y: fingerTipPosition.y,
+      ...acc.messages,
+      x: acc.fingerTipPosition.x,
+      y: acc.fingerTipPosition.y,
     },
   };
 };

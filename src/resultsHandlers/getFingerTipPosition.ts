@@ -1,17 +1,15 @@
 import { ResultsHandler } from '../models/ResultsHandler';
 
 const getFingerTipPosition: ResultsHandler = ({ $canvas, acc }) => {
-  if (!acc?.['xyRatio']?.x || !acc?.['xyRatio']?.y) {
+  if (!acc?.xyRatio?.x || !acc?.xyRatio?.y) {
     return;
   }
 
-  const xyRatio = acc['xyRatio'] as { [axis: string]: number };
-
   return {
-    ...(acc as Object),
+    ...acc,
     fingerTipPosition: {
-      x: $canvas.width * xyRatio.x,
-      y: $canvas.height * xyRatio.y,
+      x: $canvas.width * acc.xyRatio.x,
+      y: $canvas.height * acc.xyRatio.y,
     },
   };
 };

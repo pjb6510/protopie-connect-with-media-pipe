@@ -21,12 +21,12 @@ const filterEqualKeys = (target: Object, source: Object) => {
 };
 
 const sendMessages: ResultsHandler = ({ acc }) => {
-  if (!acc?.['messages']) {
+  if (!acc?.messages) {
     return;
   }
 
-  let messages = acc['messages'] as { [messageId: string]: any };
-  const prevMessages = acc?.['prev']?.['messages'];
+  let { messages } = acc;
+  const prevMessages = acc?.prev?.messages;
   let isNew = true;
 
   if (prevMessages) {
@@ -34,16 +34,16 @@ const sendMessages: ResultsHandler = ({ acc }) => {
     isNew = !!Object.keys(messages).length;
   }
 
-  for (const [messageId, value] of Object.entries(messages)) {
-    sendMessage(messageId, value);
+  for (const messageId in messages) {
+    sendMessage(messageId, messages[messageId]);
   }
 
-  delete acc['messages'];
+  delete acc.messages;
 
   return {
-    ...(acc as Object),
+    ...acc,
     prev: {
-      ...acc['prev'],
+      ...acc.prev,
       messages: isNew ? messages : prevMessages,
     },
   };
