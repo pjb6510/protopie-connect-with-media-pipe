@@ -8,9 +8,7 @@ import getFingerTipPosition from './resultsHandlers/getFingerTipPosition';
 import init from './init';
 import sendFingerTipPosition from './resultsHandlers/sendFingerTipPosition';
 
-const $canvas = document.querySelector('.output-canvas') as HTMLCanvasElement;
-const resultsListener = createResultsListener(
-  $canvas,
+const resultsListenerPipeline = createResultsListener(
   drawHands,
   getFingerTipXYRatio,
   getFingerTipPosition,
@@ -18,4 +16,4 @@ const resultsListener = createResultsListener(
   sendMessages
 );
 
-init(resultsListener);
+init(resultsListenerPipeline);

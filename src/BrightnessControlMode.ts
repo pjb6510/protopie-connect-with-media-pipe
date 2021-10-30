@@ -8,9 +8,7 @@ import replaceXYRatioWithBrightness from './resultsHandlers/replaceXYRatioWithBr
 import init from './init';
 import sendBrightnessByGesture from './resultsHandlers/sendBrightnessByGesture';
 
-const $canvas = document.querySelector('.output-canvas') as HTMLCanvasElement;
-const resultsListener = createResultsListener(
-  $canvas,
+const resultsListenerPipeline = createResultsListener(
   drawHands,
   getFingerTipXYRatio,
   replaceXYRatioWithBrightness,
@@ -18,4 +16,4 @@ const resultsListener = createResultsListener(
   sendMessages
 );
 
-init(resultsListener);
+init(resultsListenerPipeline);
