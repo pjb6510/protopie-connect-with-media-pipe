@@ -21,7 +21,7 @@ npm run brightness-control
 # run brightness control mode (./arduino/brightness_control.ino)
 ```
 
-## Finger Pointing Mode Usage
+## Finger Pointing Mode
 
 1. Run Protopie Connect.
 2. Run this app. (`npm start` or `npm run finger-pointing`)
@@ -32,11 +32,13 @@ npm run brightness-control
 7. Open finger_pointing Pie with web browser or mobile player.
 8. Now you can see that the dot tracks your right hand index finger tip.
 
-## Brightness Control Mode Usage
+## Brightness Control Mode
 
 1. Setup Arduino circuit.
 
 ![circuit](./asset/brightness_control_circuit.png)
+
+**If you don't have an Arduino, you can use pie file(brightness-control.pie) in Protopie Connect**
 
 2. Upload Arduino Code. (./arduino/brightness_control.ino)
 3. Run Protopie Connect.
@@ -44,7 +46,7 @@ npm run brightness-control
 5. Run this app. (`npm run brightness-control`)
 6. Access localhost:2918 with your web browser.
 7. Allow web browser to use camera.
-8. Make a hand gestures with your right hand.
+8. Make a hand gestures with your right hand like this.
 
 <img src="./asset/one.png" width="100" height="100">
 <img src="./asset/two.png" width="100" height="100">
