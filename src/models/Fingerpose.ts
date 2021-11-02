@@ -18,13 +18,13 @@ interface IGestureDescription {
   addCurl: (
     finger: FingerValues,
     curl: FingerCurlValues,
-    confidnce: number
+    confidence: number
   ) => void;
 
   addDirection: (
     finger: FingerValues,
     position: FingerDirectionValues,
-    confidnce: number
+    confidence: number
   ) => void;
 
   setWeight: (finger: FingerValues, weight: number) => void;
