@@ -1,6 +1,6 @@
 import { ResultsHandler } from '../models/ResultsHandler';
 
-const replaceXYRatioWithBrightness: ResultsHandler = ({ acc }) => {
+const getBrightnessFromYRatio: ResultsHandler = ({ acc }) => {
   if (!acc?.xyRatio?.y) {
     return;
   }
@@ -18,4 +18,4 @@ const replaceXYRatioWithBrightness: ResultsHandler = ({ acc }) => {
   };
 };
 
-export default replaceXYRatioWithBrightness;
+export default getBrightnessFromYRatio;

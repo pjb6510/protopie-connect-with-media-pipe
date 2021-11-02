@@ -34,19 +34,11 @@ const sendMessages: ResultsHandler = ({ acc }) => {
     isNew = !!Object.keys(messages).length;
   }
 
-  for (const messageId in messages) {
-    sendMessage(messageId, messages[messageId]);
+  if (isNew) {
+    for (const messageId in messages) {
+      sendMessage(messageId, messages[messageId]);
+    }
   }
-
-  delete acc.messages;
-
-  return {
-    ...acc,
-    prev: {
-      ...acc.prev,
-      messages: isNew ? messages : prevMessages,
-    },
-  };
 };
 
 export default sendMessages;

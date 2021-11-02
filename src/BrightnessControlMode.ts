@@ -4,16 +4,22 @@ import createResultsListener from './libs/createResultsListener';
 import drawHands from './resultsHandlers/drawHands';
 import sendMessages from './resultsHandlers/sendMessages';
 import getFingerTipXYRatio from './resultsHandlers/getFingerTipXYRatio';
-import replaceXYRatioWithBrightness from './resultsHandlers/replaceXYRatioWithBrightness';
+import getBrightnessFromYRatio from './resultsHandlers/getBrightnessFromYRatio';
 import init from './init';
+import recognizeGestures from './resultsHandlers/recognizeGestures';
+import manageGestureQueue from './resultsHandlers/ManageGestureQueue';
 import sendBrightnessByGesture from './resultsHandlers/sendBrightnessByGesture';
+import initAccumulator from './resultsHandlers/initAccumulator';
 
 const resultsListenerPipeline = createResultsListener(
-  drawHands,
   getFingerTipXYRatio,
-  replaceXYRatioWithBrightness,
+  getBrightnessFromYRatio,
+  recognizeGestures,
+  manageGestureQueue,
   sendBrightnessByGesture,
-  sendMessages
+  sendMessages,
+  initAccumulator,
+  drawHands
 );
 
 init(resultsListenerPipeline);
