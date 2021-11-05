@@ -25,6 +25,8 @@ npm run brightness-control
 
 ## Finger Pointing Mode
 
+Demo: https://www.youtube.com/watch?v=PmEk25tfTi8
+
 1. Run Protopie Connect.
 2. Run this app. (`npm start` or `npm run finger-pointing`)
 3. Access localhost:2918 with your web browser.
@@ -35,6 +37,8 @@ npm run brightness-control
 8. Now you can see that the dot tracks your right hand index finger tip.
 
 ## Brightness Control Mode
+
+Demo: https://www.youtube.com/watch?v=kHPATFu6F3o
 
 1. Setup Arduino circuit.
 
