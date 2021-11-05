@@ -1,6 +1,8 @@
 # Connect with media pipe
 
-This project is Protopie Connect bridge app using Google MediaPipe.
+> This project is Protopie Connect bridge app using Google MediaPipe.
+
+> This app is based NodeJS. You must use NodeJS.
 
 ## Installation
 
